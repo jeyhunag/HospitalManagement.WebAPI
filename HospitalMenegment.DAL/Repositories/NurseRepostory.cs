@@ -19,7 +19,7 @@ namespace HospitalMenegment.DAL.Repositories
         }
 
 
-        public Nurse AddNurse(Nurse obj)
+        public Nurse AddItem(Nurse obj)
         {
             _dbContext.nurses.Add(obj);
             _dbContext.SaveChanges();
@@ -28,19 +28,19 @@ namespace HospitalMenegment.DAL.Repositories
 
 
 
-        public List<Nurse> GetNurse()
+        public List<Nurse> GetItem()
         {
             var nurse = _dbContext.nurses.ToList();
             return nurse;
         }
 
-        public Nurse GetNurseById(int id)
+        public Nurse GetItemById(int id)
         {
             var nurse = _dbContext.nurses.Find(id);
             return nurse;
         }
 
-        public Nurse UpdateNurse(Nurse nurse)
+        public Nurse UpdateItem(Nurse nurse)
         {
             var dbNurse = _dbContext.nurses.Find(nurse.Id);
             dbNurse.nurse_name = nurse.nurse_name;
@@ -56,7 +56,7 @@ namespace HospitalMenegment.DAL.Repositories
             return nurse;
         }
 
-        public void DeleteNurse(int id)
+        public void DeleteItem(int id)
         {
             var dbNurse = _dbContext.nurses.Find(id);
             _dbContext.nurses.Remove(dbNurse);

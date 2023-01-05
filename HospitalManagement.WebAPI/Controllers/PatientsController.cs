@@ -17,13 +17,13 @@ namespace HospitalManagement.WebAPI.Controllers
 
 
         [HttpGet]
-        public List<Patient> GetPatients()
+        public List<Patient> GetItem()
         {
-            var response = _patientRepostory.GetPatients();
+            var response = _patientRepostory.GetItem();
             return response;
         }
         [HttpGet("{id:int}")]
-        public ActionResult<Patient> GetPatientById(int id)
+        public ActionResult<Patient> GetItemById(int id)
 
         {
             if (id == 0)
@@ -31,7 +31,7 @@ namespace HospitalManagement.WebAPI.Controllers
                 return BadRequest();
             }
 
-            var response = _patientRepostory.GetPatientById(id);
+            var response = _patientRepostory.GetItemById(id);
             if (response == null)
             {
                 return NotFound();
@@ -44,7 +44,7 @@ namespace HospitalManagement.WebAPI.Controllers
         public ActionResult<Patient> Create(Patient patient)
         {
 
-            var response = _patientRepostory.Addpatient(patient);
+            var response = _patientRepostory.AddItem(patient);
             return Ok(response);
         }
 
@@ -56,12 +56,12 @@ namespace HospitalManagement.WebAPI.Controllers
                 return BadRequest();
             }
 
-            var response = _patientRepostory.GetPatientById(id);
+            var response = _patientRepostory.GetItemById(id);
             if (response == null)
             {
                 return NotFound();
             }
-            response = _patientRepostory.UpdatePatient(obj);
+            response = _patientRepostory.UpdateItem(obj);
             return Ok(response); ;
         }
 
@@ -74,13 +74,13 @@ namespace HospitalManagement.WebAPI.Controllers
                 return BadRequest();
             }
 
-            var response = _patientRepostory.GetPatientById(id);
+            var response = _patientRepostory.GetItemById(id);
             if (response == null)
             {
                 return NotFound();
             }
 
-            _patientRepostory.DeletePatient(id);
+            _patientRepostory.DeleteItem(id);
             return NoContent();
         }
     }

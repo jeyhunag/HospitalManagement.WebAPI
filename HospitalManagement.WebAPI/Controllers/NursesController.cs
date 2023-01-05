@@ -17,14 +17,14 @@ namespace HospitalManagement.WebAPI.Controllers
 
 
         [HttpGet]
-        public List<Nurse> GetNurse()
+        public List<Nurse> GetItem()
         {
-            var response = _nurseRepostory.GetNurse();
+            var response = _nurseRepostory.GetItem();
             return response;
         }
 
         [HttpGet("{id:int}")]
-        public ActionResult<Nurse> GetNurseById(int id)
+        public ActionResult<Nurse> GetItemeById(int id)
 
         {
             if (id == 0)
@@ -32,7 +32,7 @@ namespace HospitalManagement.WebAPI.Controllers
                 return BadRequest();
             }
 
-            var response = _nurseRepostory.GetNurseById(id);
+            var response = _nurseRepostory.GetItemById(id);
             if (response == null)
             {
                 return NotFound();
@@ -45,7 +45,7 @@ namespace HospitalManagement.WebAPI.Controllers
         public ActionResult<Nurse> Create(Nurse nurse)
         {
 
-            var response = _nurseRepostory.AddNurse(nurse);
+            var response = _nurseRepostory.AddItem(nurse);
             return Ok(response);
         }
 
@@ -57,12 +57,12 @@ namespace HospitalManagement.WebAPI.Controllers
                 return BadRequest();
             }
 
-            var response = _nurseRepostory.GetNurseById(id);
+            var response = _nurseRepostory.GetItemById(id);
             if (response == null)
             {
                 return NotFound();
             }
-            response = _nurseRepostory.UpdateNurse(obj);
+            response = _nurseRepostory.UpdateItem(obj);
             return Ok(response); ;
         }
 
@@ -75,13 +75,13 @@ namespace HospitalManagement.WebAPI.Controllers
                 return BadRequest();
             }
 
-            var response = _nurseRepostory.GetNurseById(id);
+            var response = _nurseRepostory.GetItemById(id);
             if (response == null)
             {
                 return NotFound();
             }
 
-            _nurseRepostory.DeleteNurse(id);
+            _nurseRepostory.DeleteItem(id);
             return NoContent();
         }
     }

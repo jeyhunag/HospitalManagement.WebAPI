@@ -9,11 +9,12 @@ namespace HospitalMenegment.DAL.Interfaces
 {
     public interface IPatientRepostory
     {
-        public Patient Addpatient(Patient obj);
-        public List<Patient> GetPatients();
-        public Patient GetPatientById(int id);
-        public Patient UpdatePatient(Patient patient);
+    
+        public Patient AddItem(Patient obj);
+        public List<Patient> GetItem();
+        public Patient GetItemById(int id);
+        public Patient UpdateItem(Patient medicine);
 
-        public void DeletePatient(int id);
+        public void DeleteItem(int id);
     }
 }
