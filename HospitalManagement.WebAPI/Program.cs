@@ -1,6 +1,7 @@
+using BookRS.DAL.Interfaces;
+using BookRS.DAL.Repositories;
 using HospitalManagement.WebAPI.Data;
-using HospitalMenegment.DAL.Interfaces;
-using HospitalMenegment.DAL.Repositories;
+using HospitalMenegment.DAL.DbModels;
 using Microsoft.EntityFrameworkCore;
 using System;
 
@@ -18,12 +19,11 @@ builder.Services.AddDbContext<AppDbContext>(opts =>
     opts.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
 
 });
-builder.Services.AddScoped<IPatientRepostory, PatientRepository>();
-builder.Services.AddScoped<INurseRepostory, NurseRepostory>();
-builder.Services.AddScoped<IMedicineRepostory, MedicineRepostory>();
-builder.Services.AddScoped<IHospitalRepostory, HospitalRepostory>();
-builder.Services.AddScoped<IDoctorRepostory, DoctorRepostory>();
-builder.Services.AddScoped<IAppointmentRepostroy, AppointmentRepostory>();
+
+
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

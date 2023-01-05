@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HospitalMenegment.DAL.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230104162625_HospitalManagmentAPI")]
-    partial class HospitalManagmentAPI
+    [Migration("20230105200255_Asqasdxa")]
+    partial class Asqasdxa
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -291,17 +291,12 @@ namespace HospitalMenegment.DAL.Migrations
             modelBuilder.Entity("HospitalMenegment.DAL.DbModels.Appointment", b =>
                 {
                     b.HasOne("HospitalMenegment.DAL.DbModels.Doctor", "Doctor")
-                        .WithMany("Appointments")
+                        .WithMany()
                         .HasForeignKey("DoctorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Doctor");
-                });
-
-            modelBuilder.Entity("HospitalMenegment.DAL.DbModels.Doctor", b =>
-                {
-                    b.Navigation("Appointments");
                 });
 #pragma warning restore 612, 618
         }

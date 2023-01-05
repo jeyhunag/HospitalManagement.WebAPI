@@ -13,7 +13,5 @@ namespace HospitalMenegment.DAL.DbModels
         public DateTime appointment_date { get; set; }
         public string appointment_description { get; set; }
         public int DoctorId { get; set; }
-
-        public Doctor Doctor { get; set; }
     }
 }

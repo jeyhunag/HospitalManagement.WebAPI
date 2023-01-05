@@ -55,8 +55,6 @@ namespace HospitalMenegment.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DoctorId");
-
                     b.ToTable("appointments");
                 });
 
@@ -284,22 +282,6 @@ namespace HospitalMenegment.DAL.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("patients");
-                });
-
-            modelBuilder.Entity("HospitalMenegment.DAL.DbModels.Appointment", b =>
-                {
-                    b.HasOne("HospitalMenegment.DAL.DbModels.Doctor", "Doctor")
-                        .WithMany("Appointments")
-                        .HasForeignKey("DoctorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Doctor");
-                });
-
-            modelBuilder.Entity("HospitalMenegment.DAL.DbModels.Doctor", b =>
-                {
-                    b.Navigation("Appointments");
                 });
 #pragma warning restore 612, 618
         }

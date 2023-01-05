@@ -1,6 +1,6 @@
-﻿using HospitalManagement.WebAPI.Data;
+﻿using BookRS.DAL.Interfaces;
+using HospitalManagement.WebAPI.Data;
 using HospitalMenegment.DAL.DbModels;
-using HospitalMenegment.DAL.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -12,8 +12,8 @@ namespace HospitalManagement.WebAPI.Controllers
     [ApiController]
     public class AppointmentsController : ControllerBase
     {
-        private readonly IAppointmentRepostroy _appointment;
-        public AppointmentsController(IAppointmentRepostroy appointment)
+        private readonly IGenericRepository<Appointment> _appointment;
+        public AppointmentsController(IGenericRepository<Appointment> appointment)
         {
             _appointment = appointment;
         }

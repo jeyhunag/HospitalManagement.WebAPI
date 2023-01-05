@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HospitalMenegment.DAL.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230104155554_HospitalAPI")]
-    partial class HospitalAPI
+    [Migration("20230105204104_UpdateDoctor")]
+    partial class UpdateDoctor
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -56,8 +56,6 @@ namespace HospitalMenegment.DAL.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("DoctorId");
 
                     b.ToTable("appointments");
                 });
@@ -286,17 +284,6 @@ namespace HospitalMenegment.DAL.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("patients");
-                });
-
-            modelBuilder.Entity("HospitalMenegment.DAL.DbModels.Appointment", b =>
-                {
-                    b.HasOne("HospitalMenegment.DAL.DbModels.Doctor", "Doctor")
-                        .WithMany()
-                        .HasForeignKey("DoctorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Doctor");
                 });
 #pragma warning restore 612, 618
         }

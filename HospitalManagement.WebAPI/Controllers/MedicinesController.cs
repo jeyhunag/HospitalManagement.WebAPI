@@ -1,5 +1,5 @@
-﻿using HospitalMenegment.DAL.DbModels;
-using HospitalMenegment.DAL.Interfaces;
+﻿using BookRS.DAL.Interfaces;
+using HospitalMenegment.DAL.DbModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,8 +9,9 @@ namespace HospitalManagement.WebAPI.Controllers
     [ApiController]
     public class MedicinesController : ControllerBase
     {
-        private readonly IMedicineRepostory _medicineRepostory;
-        public MedicinesController(IMedicineRepostory medicineRepostory)
+        private readonly IGenericRepository<Medicine> _medicineRepostory;
+
+        public MedicinesController(IGenericRepository<Medicine> medicineRepostory)
         {
             _medicineRepostory = medicineRepostory;
         }

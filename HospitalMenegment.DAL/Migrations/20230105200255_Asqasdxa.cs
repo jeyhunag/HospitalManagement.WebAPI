@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace HospitalMenegment.DAL.Migrations
 {
-    public partial class HospitalAPI : Migration
+    public partial class Asqasdxa : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

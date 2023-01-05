@@ -16,6 +16,5 @@ namespace HospitalMenegment.DAL.DbModels
         public string doctor_password { get; set; }
         public string doctor_address { get; set; }
 
-        //public virtual ICollection<Appointment> Appointments { get; set; }
     }
 }
