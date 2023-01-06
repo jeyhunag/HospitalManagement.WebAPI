@@ -46,7 +46,9 @@ namespace BookRS.DAL.Repositories
 
         public TEntity UpdateItem(TEntity item)
         {
-            throw new NotImplementedException();
+            _entities.Update(item);
+            _dbContext.SaveChanges();
+            return item;
         }
     }
 }
