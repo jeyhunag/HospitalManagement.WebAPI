@@ -19,5 +19,14 @@ namespace HospitalManagement.WebAPI.Data
         public DbSet<Medicine> medicines { get; set; }
         public DbSet<Nurse> nurses { get; set; }
         public DbSet<Patient> patients { get; set; }
+
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Entity<Appointment>()
+        //        .HasOne(a => a.Doctor)
+        //        .WithMany(p => p.Appointments)
+        //        .HasForeignKey(a => a.DoctorId)
+        //        .OnDelete(DeleteBehavior.Restrict);
+        //}
     }
 }

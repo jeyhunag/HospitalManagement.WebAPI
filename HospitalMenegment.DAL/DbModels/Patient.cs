@@ -8,12 +8,14 @@ namespace HospitalMenegment.DAL.DbModels
 {
     public class Patient:BaseEntity
     {
-        public string patient_Name { get; set; }
-        public string patient_mobile { get; set; }
-        public string patient_email { get; set; }
-        public string patient_username { get; set; }
-        public string patient_password { get; set; }
-        public string patient_address { get; set; }
-        public string patient_blood_group { get; set; }
+        public string Name { get; set; }
+        public string Mobile { get; set; }
+        public string Email { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public string Address { get; set; }
+        public string Blood_Group { get; set; }
+
+
     }
 }

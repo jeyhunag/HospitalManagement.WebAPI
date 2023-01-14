@@ -8,10 +8,15 @@ namespace HospitalMenegment.DAL.DbModels
 {
     public class Hospital : BaseEntity
     {
-        public string hospital_name { get; set; }
-        public string hospital_place { get; set; }
-        public string hospital_type { get; set; }
-        public string hospital_description { get; set; }
-        public string hospital_address { get; set; }
+        public string Name { get; set; }
+        public string Place { get; set; }
+        public string Type { get; set; }
+        public string Description { get; set; }
+        public string Address { get; set; }
+
+
+        //public virtual ICollection<Doctor> Doctors { get; set; }
+        //public virtual ICollection<Nurse> Nurses { get; set; }
+
     }
 }

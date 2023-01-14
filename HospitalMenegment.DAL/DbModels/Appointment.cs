@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,10 +9,17 @@ namespace HospitalMenegment.DAL.DbModels
 {
     public class Appointment:BaseEntity
     {
-        public int appointment_number { get; set; }
-        public string appointment_type { get; set; }
-        public DateTime appointment_date { get; set; }
-        public string appointment_description { get; set; }
+        public int Number { get; set; }
+        public string Type { get; set; }
+        public DateTime Date { get; set; }
+        public string Description { get; set; }
+
+        // Foreign Key
+        [ForeignKey("DoctorId")]
+
         public int DoctorId { get; set; }
+        public Doctor Doctor { get; set; }
+
+
     }
 }

@@ -8,12 +8,14 @@ namespace HospitalMenegment.DAL.DbModels
 {
     public class Medicine:BaseEntity
     {
-        public string medicine_name { get; set; }
-        public string medicine_company { get; set; }
-        public string medicine_composition { get; set; }
-        public string medicine_cost { get; set; }
-        public string medicine_type { get; set; }
-        public string medicine_dose { get; set; }
-        public string medicine_description { get; set; }
+        public string Name { get; set; }
+        public string Company { get; set; }
+        public string Composition { get; set; }
+        public string Cost { get; set; }
+        public string Type { get; set; }
+        public string Dose { get; set; }
+        public string Description { get; set; }
+
+
     }
 }
